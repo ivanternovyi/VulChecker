@@ -13,6 +13,7 @@ class ParseVulnerabilitiesService
 
   def parse_vulnerabilities
     td_elements.in_groups_of(4).each do |vul_elems|
+      # break if vul_elems[0].to_date < Vulnerability.newest_date
       Vulnerability.create(
         published_at: vul_elems[0].to_date,
         rubygem: vul_elems[1],
