@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cve: MyString
+  title: MyString
+  rubygem: MyString
+  published_at: 2019-02-27
+
+two:
+  cve: MyString
+  title: MyString
+  rubygem: MyString
+  published_at: 2019-02-27
