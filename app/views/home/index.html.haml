@@ -1,1 +1,12 @@
-%h1 #index
+%table
+  %tr
+    %th Date
+    %th Rubygem
+    %th Title
+    %th CVE
+  - @vulnerabilities.each do |vulnerability|
+    %tr
+      %th= vulnerability.published_at
+      %th= vulnerability.rubygem
+      %th= vulnerability.title
+      %th= vulnerability.cve
