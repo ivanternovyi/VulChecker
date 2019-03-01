@@ -3,10 +3,14 @@ class ParseVulnerabilitiesService
 
   def initialize
     @td_elements = Rubysec.new.call
+    @vulnerabilities_start_count = Vulnerability.count
   end
 
   def call
     parse_vulnerabilities
+    if @vulnerabilities_start_count != Vulnerability.count
+      MailToUsersService.new.call
+    end
   end
 
   private
