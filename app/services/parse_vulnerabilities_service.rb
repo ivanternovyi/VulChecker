@@ -12,6 +12,7 @@ class ParseVulnerabilitiesService
     parse_vulnerabilities
     if @vulnerabilities_start_count != Vulnerability.count
       MailToUsersService.new.call
+      NotifyTelegramUsersService.new.call
     end
   end
 
