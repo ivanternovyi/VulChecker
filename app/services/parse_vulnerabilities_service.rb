@@ -11,8 +11,8 @@ class ParseVulnerabilitiesService
   def call
     parse_vulnerabilities
     if @vulnerabilities_start_count != Vulnerability.count
-      MailToUsersService.new.call
-      NotifyTelegramUsersService.new.call
+      MailToUsersWorker.perform_async
+      NotifyTelegramUsersWorker.perform_async
     end
   end
 

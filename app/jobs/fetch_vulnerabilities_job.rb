@@ -1,4 +1,4 @@
-class FetchVulnerabilitiesJob < ActiveJob::Base
+class FetchVulnerabilitiesJob < ApplicationJob
   queue_as :default
 
   def perform
